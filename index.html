@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Parking System</h1>
+        <div id="parkSection">
+            <label for="numberPlateFile">Upload Number Plate File (.jpg or .txt):</label>
+            <input type="file" id="numberPlateFile" accept=".jpg, .jpeg, .png, .txt">
+            <button onclick="parkCar()">Park Car</button>
+        </div>
+
+        <div id="leaveSection">
+            <label for="leaveNumberPlateFile">Upload Number Plate File (.jpg or .txt) to Leave:</label>
+            <input type="file" id="leaveNumberPlateFile" accept=".jpg, .jpeg, .png, .txt">
+            <button onclick="leaveCar()">Leave Car</button>
+        </div>
+
+        <div id="message"></div>
+        <div id="bill" style="display:none;">
+            <h2>Parking Bill</h2>
+            <p id="billDetails"></p>
+            <button onclick="downloadBill()">Download Bill</button>
+            <button onclick="printBill()">Print Bill</button>
+            <img src="images/WhatsApp Image 2024-06-07 at 7.23.15 AM.jpeg" alt="QR Code for Payment" class="qr-code">
+            <p>Scan the QR code to pay</p>
+            <div id="qr-reader" style="width: 300px;"></div>
+            <div id="qr-reader-results"></div>
+        </div>
+    </div>
+    <div id="printableBill" style="display:none;"></div>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
